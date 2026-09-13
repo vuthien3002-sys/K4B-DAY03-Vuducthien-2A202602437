@@ -394,34 +394,6 @@ tool_names = [
     if tool.get("name")
 ]
 
-model_name = getattr(provider, "model_name", provider.__class__.__name__)
-
-c1, c2, c3, c4 = st.columns(4)
-
-with c1:
-    st.metric(
-        "LLM Provider",
-        provider.__class__.__name__,
-    )
-
-with c2:
-    st.metric(
-        "Model",
-        model_name,
-    )
-
-with c3:
-    st.metric(
-        "MCP Server",
-        mcp_server.server_name,
-    )
-
-with c4:
-    st.metric(
-        "Native Tools",
-        len(tool_names),
-    )
-
 
 # ==============================================================================
 # SIDEBAR

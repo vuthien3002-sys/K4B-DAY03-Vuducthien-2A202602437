@@ -10,11 +10,11 @@
 
 | Tiêu chí Đánh giá | Mức độ (1 - 5) | Giải trình chi tiết lý do chọn điểm |
 | :--- | :---: | :--- |
-| **1. Multi-step Reasoning** |5 / 5 | Hệ thống cần thực hiện nhiều bước liên tiếp: hiểu yêu cầu của người dùng → tra cứu món ăn → kiểm tra tình trạng còn/hết món → kiểm tra giá và số lượng → tính tổng tiền → đối chiếu với yêu cầu/ngân sách → xác nhận thông tin → tạo đơn hàng. Với yêu cầu phức tạp, Agent còn phải lựa chọn món hoặc combo phù hợp trước khi đặt hàng. |
-| **2. Tool Interaction** |5 / 5 | Agent cần tương tác với dữ liệu bên ngoài thông qua MCP Server/API/Cơ sở dữ liệu. Ví dụ, tool query_menu() dùng để tra cứu menu, giá và tình trạng món; tool create_order() dùng để tạo đơn hàng. Trong hệ thống thực tế có thể kết nối thêm dữ liệu nhà hàng, đơn hàng và trạng thái giao hàng. |
-| **3. Dynamic Decision** | 5 / 5 | Quyết định ở bước sau phụ thuộc trực tiếp vào kết quả của bước trước. Ví dụ, nếu món còn hàng và phù hợp ngân sách thì Agent tiếp tục tạo đơn; nếu món hết hàng thì Agent phải tìm món thay thế hoặc hỏi lại người dùng; nếu tổng tiền vượt ngân sách thì Agent phải điều chỉnh lựa chọn thay vì đặt đơn ngay. |
+| **1. Multi-step Reasoning** |3 / 5 | Hệ thống cần thực hiện nhiều bước liên tiếp: hiểu yêu cầu của người dùng → tra cứu món ăn → kiểm tra tình trạng còn/hết món → kiểm tra giá và số lượng → tính tổng tiền → đối chiếu với yêu cầu/ngân sách → xác nhận thông tin → tạo đơn hàng. Với yêu cầu phức tạp, Agent còn phải lựa chọn món hoặc combo phù hợp trước khi đặt hàng. |
+| **2. Tool Interaction** |4 / 5 | Agent cần tương tác với dữ liệu bên ngoài thông qua MCP Server/API/Cơ sở dữ liệu. Ví dụ, tool query_menu() dùng để tra cứu menu, giá và tình trạng món; tool create_order() dùng để tạo đơn hàng. Trong hệ thống thực tế có thể kết nối thêm dữ liệu nhà hàng, đơn hàng và trạng thái giao hàng. |
+| **3. Dynamic Decision** | 3/ 5 | Quyết định ở bước sau phụ thuộc trực tiếp vào kết quả của bước trước. Ví dụ, nếu món còn hàng và phù hợp ngân sách thì Agent tiếp tục tạo đơn; nếu món hết hàng thì Agent phải tìm món thay thế hoặc hỏi lại người dùng; nếu tổng tiền vượt ngân sách thì Agent phải điều chỉnh lựa chọn thay vì đặt đơn ngay. |
 | **4. Long Horizon Goal** | 4 / 5 | Agent cần duy trì mục tiêu của người dùng xuyên suốt nhiều bước, chẳng hạn loại món, số lượng, ngân sách và yêu cầu đặc biệt cho đến khi đơn hàng được tạo thành công. Sau khi đặt hàng, Agent còn có thể tiếp tục theo dõi trạng thái chuẩn bị và giao hàng. Tuy nhiên, quy trình thường hoàn thành trong một khoảng thời gian tương đối ngắn nên chưa cần mức độ duy trì mục tiêu rất dài như các Agent quản lý dự án hoặc nghiên cứu dài hạn. |
-| **TỔNG ĐIỂM AGENTIC FIT** | 19/ 20** | *Nếu tổng điểm > 12/20: Bài toán rất phù hợp triển khai Agentic System.* |
+| **TỔNG ĐIỂM AGENTIC FIT** | 14/ 20** | *Nếu tổng điểm > 12/20: Bài toán rất phù hợp triển khai Agentic System.* |
 
 ---
 

@@ -4,8 +4,8 @@
     "query": "Chào bạn, bạn có thể giới thiệu bạn hỗ trợ những gì trong việc đặt đồ ăn không?",
     "action_type": "FINAL_ANSWER",
     "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
-    "output": "Chào bạn! Mình là trợ lý hỗ trợ **Quản lý đơn giao đồ ăn**. Mình có thể hỗ trợ bạn các công việc sau:\n\n1. **Tra cứu thực đơn:** \n   - Tìm kiếm thông tin món ăn theo tên món, mã món hoặc loại món.\n   - Kiểm tra giá cả và tình trạng còn hàng/hết hàng của các món ăn.\n\n2. **Đặt đồ ăn:**\n   - Kiểm tra món ăn và tạo đơn hàng theo số lượng bạn yêu cầu.\n   - Ghi nhận các yêu cầu đặc biệt/ghi chú cho đơn hàng (ví dụ: không cay, ít đường, v.v.).\n\nBạn muốn tra cứu thực đơn hay đặt món gì hôm nay không ạ?",
-    "latency_ms": 4408.59
+    "output": "Chào bạn! Mình là trợ lý hỗ trợ quản lý và đặt đồ ăn. Mình có thể giúp bạn các công việc sau:\n\n1. **Tra cứu thực đơn:** Tìm kiếm thông tin món ăn theo tên, mã món hoặc loại món (xem giá tiền, danh mục và trạng thái còn/hết hàng).\n2. **Kiểm tra tình trạng món:** Kiểm tra xem món ăn bạn yêu cầu còn hàng hay không.\n3. **Tạo đơn đặt đồ ăn:** Hỗ trợ đặt món theo đúng số lượng và ghi chú riêng của bạn (ví dụ: không cay, ít đường,...) sau khi đã xác nhận món còn hàng.\n\nBạn cần tra cứu thực đơn hay đặt món gì hôm nay không ạ?",
+    "latency_ms": 4828.34
   },
   {
     "step": 1,
@@ -28,15 +28,15 @@
         }
       ]
     },
-    "latency_ms": 2273.6
+    "latency_ms": 2078.08
   },
   {
     "step": 2,
     "query": "Tra cứu giúp tôi thông tin món Cơm gà.",
     "action_type": "FINAL_ANSWER",
     "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
-    "output": "Thông tin về món **Cơm gà** bạn cần tra cứu:\n\n- **Mã món:** FOOD001\n- **Tên món:** Cơm gà\n- **Loại món:** Món chính\n- **Giá tiền:** 65.000 VNĐ\n- **Trạng thái:** Còn hàng (Có sẵn)",
-    "latency_ms": 4038.31
+    "output": "Thông tin món **Cơm gà** trong thực đơn:\n\n- **Mã món:** FOOD001\n- **Tên món:** Cơm gà\n- **Loại món:** Món chính\n- **Giá:** 65.000 VNĐ\n- **Trạng thái:** Còn hàng",
+    "latency_ms": 3393.08
   },
   {
     "step": 1,
@@ -59,7 +59,7 @@
         }
       ]
     },
-    "latency_ms": 2476.14
+    "latency_ms": 2745.41
   },
   {
     "step": 2,
@@ -69,8 +69,8 @@
     "arguments": {
       "items": [
         {
-          "quantity": 1,
-          "item_id": "FOOD001"
+          "item_id": "FOOD001",
+          "quantity": 1
         }
       ]
     },
@@ -90,15 +90,15 @@
       "order_note": "",
       "message": "Đặt hàng thành công. Tổng tiền: 65,000 VNĐ."
     },
-    "latency_ms": 2648.72
+    "latency_ms": 3224.59
   },
   {
     "step": 3,
     "query": "Đặt giúp tôi 1 phần Cơm gà.",
     "action_type": "FINAL_ANSWER",
     "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
-    "output": "Đơn hàng của bạn đã được đặt thành công!\n\n**Thông tin đơn hàng:**\n- **Mã đơn hàng:** ORD-2026-001\n- **Món đã đặt:** Cơm gà\n- **Số lượng:** 1 phần\n- **Tổng tiền:** 65,000 VNĐ",
-    "latency_ms": 3711.29
+    "output": "Đặt hàng thành công! Dưới đây là thông tin chi tiết về đơn hàng của bạn:\n\n- **Mã đơn hàng:** ORD-2026-001\n- **Món đã đặt:** Cơm gà\n- **Số lượng:** 1\n- **Tổng tiền:** 65.000 VNĐ",
+    "latency_ms": 3478.61
   },
   {
     "step": 1,
@@ -135,7 +135,7 @@
         }
       ]
     },
-    "latency_ms": 1056.24
+    "latency_ms": 1053.08
   },
   {
     "step": 2,
@@ -165,7 +165,7 @@
         }
       ]
     },
-    "latency_ms": 920.67
+    "latency_ms": 1110.99
   },
   {
     "step": 3,
@@ -207,7 +207,7 @@
       "order_note": "",
       "message": "Đặt hàng thành công. Tổng tiền: 90,000 VNĐ."
     },
-    "latency_ms": 1043.99
+    "latency_ms": 1018.55
   },
   {
     "step": 4,
@@ -215,7 +215,7 @@
     "action_type": "FINAL_ANSWER",
     "thought": "create_order đã trả SUCCESS nên đã đủ thông tin để trả Final Answer.",
     "output": "Đặt hàng thành công. Mã đơn ORD-2026-001. Món đã đặt: 1 x Cơm gà, 1 x Trà chanh. Tổng tiền: 90,000 VNĐ.",
-    "latency_ms": 1046.35
+    "latency_ms": 976.6
   },
   {
     "step": 1,
@@ -229,7 +229,7 @@
       "status": "NOT_FOUND",
       "message": "Không tìm thấy món ăn phù hợp với 'food9999'"
     },
-    "latency_ms": 1021.35
+    "latency_ms": 1065.86
   },
   {
     "step": 2,
@@ -237,6 +237,6 @@
     "action_type": "FINAL_ANSWER",
     "thought": "Tool trả về NOT_FOUND nên không được bịa dữ liệu và không được tạo đơn.",
     "output": "Không tìm thấy món ăn phù hợp với 'food9999'",
-    "latency_ms": 1069.91
+    "latency_ms": 985.77
   }
 ]
