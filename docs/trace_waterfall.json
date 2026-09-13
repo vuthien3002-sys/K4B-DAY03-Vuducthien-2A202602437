@@ -1,29 +1,242 @@
 [
   {
     "step": 1,
-    "query": "Chào bạn, bạn có thể giới thiệu quy chế học vụ cơ bản của Đại học VinUni không?",
+    "query": "Chào bạn, bạn có thể giới thiệu bạn hỗ trợ những gì trong việc đặt đồ ăn không?",
     "action_type": "FINAL_ANSWER",
-    "thought": "Câu hỏi chung về quy chế học vụ, trả lời trực tiếp không cần gọi Tool.",
-    "output": "[Mock Agent Response]: Xin chào! Quy chế học vụ VinUni yêu cầu sinh viên tích lũy tối thiểu 120 tín chỉ và duy trì GPA trên 2.0 để tốt nghiệp.",
-    "latency_ms": 2845.93
+    "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Chào bạn! Mình là trợ lý hỗ trợ **Quản lý đơn giao đồ ăn**. Mình có thể hỗ trợ bạn các công việc sau:\n\n1. **Tra cứu thực đơn:** \n   - Tìm kiếm thông tin món ăn theo tên món, mã món hoặc loại món.\n   - Kiểm tra giá cả và tình trạng còn hàng/hết hàng của các món ăn.\n\n2. **Đặt đồ ăn:**\n   - Kiểm tra món ăn và tạo đơn hàng theo số lượng bạn yêu cầu.\n   - Ghi nhận các yêu cầu đặc biệt/ghi chú cho đơn hàng (ví dụ: không cay, ít đường, v.v.).\n\nBạn muốn tra cứu thực đơn hay đặt món gì hôm nay không ạ?",
+    "latency_ms": 4408.59
   },
   {
     "step": 1,
-    "query": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
+    "query": "Tra cứu giúp tôi thông tin món Cơm gà.",
     "action_type": "TOOL_EXECUTION",
-    "tool_name": "academic_query",
+    "tool_name": "query_menu",
     "arguments": {
-      "student_id": "SV2026001"
+      "keyword": "Cơm gà"
     },
-    "observation": {},
-    "latency_ms": 799.12
+    "observation": {
+      "status": "SUCCESS",
+      "count": 1,
+      "data": [
+        {
+          "item_id": "FOOD001",
+          "name": "Cơm gà",
+          "category": "Món chính",
+          "price": 65000,
+          "available": true
+        }
+      ]
+    },
+    "latency_ms": 2273.6
   },
   {
     "step": 2,
-    "query": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
+    "query": "Tra cứu giúp tôi thông tin món Cơm gà.",
     "action_type": "FINAL_ANSWER",
-    "thought": "Tổng hợp kết quả từ MCP Server thành công.",
-    "output": "Chưa thể trả lời chi tiết do chưa nhận được dữ liệu từ MCP Server (hãy hoàn thành TODO 2.1).",
-    "latency_ms": 10.0
+    "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Thông tin về món **Cơm gà** bạn cần tra cứu:\n\n- **Mã món:** FOOD001\n- **Tên món:** Cơm gà\n- **Loại món:** Món chính\n- **Giá tiền:** 65.000 VNĐ\n- **Trạng thái:** Còn hàng (Có sẵn)",
+    "latency_ms": 4038.31
+  },
+  {
+    "step": 1,
+    "query": "Đặt giúp tôi 1 phần Cơm gà.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "query_menu",
+    "arguments": {
+      "keyword": "Cơm gà"
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "count": 1,
+      "data": [
+        {
+          "item_id": "FOOD001",
+          "name": "Cơm gà",
+          "category": "Món chính",
+          "price": 65000,
+          "available": true
+        }
+      ]
+    },
+    "latency_ms": 2476.14
+  },
+  {
+    "step": 2,
+    "query": "Đặt giúp tôi 1 phần Cơm gà.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "create_order",
+    "arguments": {
+      "items": [
+        {
+          "quantity": 1,
+          "item_id": "FOOD001"
+        }
+      ]
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "order_id": "ORD-2026-001",
+      "items": [
+        {
+          "item_id": "FOOD001",
+          "name": "Cơm gà",
+          "price": 65000,
+          "quantity": 1,
+          "subtotal": 65000
+        }
+      ],
+      "total_price": 65000,
+      "order_note": "",
+      "message": "Đặt hàng thành công. Tổng tiền: 65,000 VNĐ."
+    },
+    "latency_ms": 2648.72
+  },
+  {
+    "step": 3,
+    "query": "Đặt giúp tôi 1 phần Cơm gà.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Đơn hàng của bạn đã được đặt thành công!\n\n**Thông tin đơn hàng:**\n- **Mã đơn hàng:** ORD-2026-001\n- **Món đã đặt:** Cơm gà\n- **Số lượng:** 1 phần\n- **Tổng tiền:** 65,000 VNĐ",
+    "latency_ms": 3711.29
+  },
+  {
+    "step": 1,
+    "query": "Tìm giúp tôi một phần cơm và một đồ uống có tổng giá dưới 120.000 đồng. Nếu còn món thì đặt giúp tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "query_menu",
+    "arguments": {
+      "keyword": "Món chính"
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "count": 3,
+      "data": [
+        {
+          "item_id": "FOOD001",
+          "name": "Cơm gà",
+          "category": "Món chính",
+          "price": 65000,
+          "available": true
+        },
+        {
+          "item_id": "FOOD002",
+          "name": "Cơm sườn",
+          "category": "Món chính",
+          "price": 70000,
+          "available": true
+        },
+        {
+          "item_id": "FOOD003",
+          "name": "Phở bò",
+          "category": "Món chính",
+          "price": 60000,
+          "available": false
+        }
+      ]
+    },
+    "latency_ms": 1056.24
+  },
+  {
+    "step": 2,
+    "query": "Tìm giúp tôi một phần cơm và một đồ uống có tổng giá dưới 120.000 đồng. Nếu còn món thì đặt giúp tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "query_menu",
+    "arguments": {
+      "keyword": "Đồ uống"
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "count": 2,
+      "data": [
+        {
+          "item_id": "DRINK002",
+          "name": "Trà chanh",
+          "category": "Đồ uống",
+          "price": 25000,
+          "available": true
+        },
+        {
+          "item_id": "DRINK003",
+          "name": "Cà phê sữa",
+          "category": "Đồ uống",
+          "price": 30000,
+          "available": true
+        }
+      ]
+    },
+    "latency_ms": 920.67
+  },
+  {
+    "step": 3,
+    "query": "Tìm giúp tôi một phần cơm và một đồ uống có tổng giá dưới 120.000 đồng. Nếu còn món thì đặt giúp tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "create_order",
+    "arguments": {
+      "items": [
+        {
+          "item_id": "FOOD001",
+          "quantity": 1
+        },
+        {
+          "item_id": "DRINK002",
+          "quantity": 1
+        }
+      ]
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "order_id": "ORD-2026-001",
+      "items": [
+        {
+          "item_id": "FOOD001",
+          "name": "Cơm gà",
+          "price": 65000,
+          "quantity": 1,
+          "subtotal": 65000
+        },
+        {
+          "item_id": "DRINK002",
+          "name": "Trà chanh",
+          "price": 25000,
+          "quantity": 1,
+          "subtotal": 25000
+        }
+      ],
+      "total_price": 90000,
+      "order_note": "",
+      "message": "Đặt hàng thành công. Tổng tiền: 90,000 VNĐ."
+    },
+    "latency_ms": 1043.99
+  },
+  {
+    "step": 4,
+    "query": "Tìm giúp tôi một phần cơm và một đồ uống có tổng giá dưới 120.000 đồng. Nếu còn món thì đặt giúp tôi.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "create_order đã trả SUCCESS nên đã đủ thông tin để trả Final Answer.",
+    "output": "Đặt hàng thành công. Mã đơn ORD-2026-001. Món đã đặt: 1 x Cơm gà, 1 x Trà chanh. Tổng tiền: 90,000 VNĐ.",
+    "latency_ms": 1046.35
+  },
+  {
+    "step": 1,
+    "query": "Kiểm tra giúp tôi món có mã FOOD9999 và đặt 1 phần món đó.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "query_menu",
+    "arguments": {
+      "keyword": "FOOD9999"
+    },
+    "observation": {
+      "status": "NOT_FOUND",
+      "message": "Không tìm thấy món ăn phù hợp với 'food9999'"
+    },
+    "latency_ms": 1021.35
+  },
+  {
+    "step": 2,
+    "query": "Kiểm tra giúp tôi món có mã FOOD9999 và đặt 1 phần món đó.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Tool trả về NOT_FOUND nên không được bịa dữ liệu và không được tạo đơn.",
+    "output": "Không tìm thấy món ăn phù hợp với 'food9999'",
+    "latency_ms": 1069.91
   }
 ]

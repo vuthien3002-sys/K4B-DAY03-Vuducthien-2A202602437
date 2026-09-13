@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "direct_query",
+    "question": "Chào bạn, bạn có thể giới thiệu bạn hỗ trợ những gì trong việc đặt đồ ăn không?",
+    "expected_behavior": "Agent trả lời trực tiếp về chức năng của Trợ lý Quản lý Đơn giao đồ ăn, không cần gọi Tool.",
+    "complexity": "Low"
+  },
+  {
+    "id": "TC02",
+    "type": "single_tool_query",
+    "question": "Tra cứu giúp tôi thông tin món Cơm gà.",
+    "expected_behavior": "Agent tự động phát sinh Tool Call 'query_menu' với từ khóa 'Cơm gà' và trả về giá cùng tình trạng món.",
+    "complexity": "Medium"
+  },
+  {
+  "id": "TC03",
+  "type": "order_creation",
+  "question": "Đặt giúp tôi 1 phần Cơm gà.",
+  "expected_behavior": "Agent tự động phát sinh Tool Call 'create_order' với đúng món ăn, số lượng và thông tin đơn hàng theo yêu cầu của người dùng.",
+  "complexity": "Medium"
+},
+{
+  "id": "TC04",
+  "type": "multi_step_reasoning",
+  "question": "Tìm giúp tôi một phần cơm và một đồ uống có tổng giá dưới 120.000 đồng. Nếu còn món thì đặt giúp tôi.",
+  "expected_behavior": "Agent thực hiện chuỗi xử lý đa bước: gọi Tool 'query_menu' để tra cứu món ăn, giá và tình trạng còn hàng; lựa chọn các món phù hợp với ngân sách; sau đó gọi Tool 'create_order' để tạo đơn hàng.",
+  "complexity": "High"
+},
+{
+  "id": "TC05",
+  "type": "edge_case_handling",
+  "question": "Kiểm tra giúp tôi món có mã FOOD9999 và đặt 1 phần món đó.",
+  "expected_behavior": "Agent gọi Tool tra cứu món ăn và nhận kết quả NOT_FOUND. Agent phải thông báo lịch sự rằng món không tồn tại hoặc không tìm thấy, không tự bịa thông tin món ăn và không thực hiện Tool Call 'create_order'.",
+  "complexity": "Medium"
+}
+]
